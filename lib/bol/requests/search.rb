@@ -1,6 +1,6 @@
 module Bol
   module Requests
-    class Search
+    class Search < Request
     end
   end
 end

@@ -1,12 +1,25 @@
-require 'minitest/spec'
-require 'bol'
+require 'spec_helper'
 
 describe Bol do
   describe '#configure' do
-    it 'should create configuration object'
-    it 'should yield config object without argument'
-    it 'should raise with non-hash argument'
-    it 'should not yield with argument'
+    it 'should create configuration object' do
+      Bol.configure key: 'foo'
+      Bol.configuration.key.must_equal('foo')
+    end
+
+    it 'should yield config object without argument' do
+      Bol.configure do |c|
+        c.must_equal Bol.configuration
+      end
+    end
+
+    it 'should raise with non-hash argument' do
+      proc { Bol.configure 'foo' }.must_raise ArgumentError
+    end
+
+    it 'should not yield with argument' do
+      Bol.configure(key: 'foo') { |c| flunk }
+    end
   end
 
   describe '#products' do

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Bol::VERSION
   s.authors     = ['Arjan van der Gaag']
   s.email       = ['arjan@arjanvandergaag.nl']
-  s.homepage    = ""
+  s.homepage    = "https://github.com/avdgaag/bol"
   s.summary     = %q{Simple Ruby wrapper around the bol.com developer API}
   s.description = %q{Access the bol.com product catalog from a Ruby project.}
 
@@ -17,11 +17,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'turn'
-  s.add_development_dependency 'guard'
-  s.add_development_dependency 'guard-minitest'
   s.add_development_dependency 'vcr'
   s.add_development_dependency 'fakeweb'
-  s.add_development_dependency 'rb-fsevent'
-  s.add_development_dependency 'growl'
 end

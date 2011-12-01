@@ -1,6 +1,6 @@
 module Bol
   module Requests
-    class Product
+    class Product < Request
     end
   end
 end

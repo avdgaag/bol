@@ -1,6 +1,6 @@
 module Bol
   module Requests
-    class List
+    class List < Request
     end
   end
 end

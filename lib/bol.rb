@@ -7,4 +7,13 @@ module Bol
   autoload :Query,         'bol/query'
   autoload :Request,       'bol/request'
   autoload :Requests,      'bol/requests'
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure(options = nil)
+    @configuration = Configuration.new(options)
+    yield @configuration if options.nil?
+  end
 end

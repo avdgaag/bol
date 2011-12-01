@@ -1,6 +1,6 @@
 module Bol
   module Requests
-    class Category
+    class Category < Request
     end
   end
 end

@@ -1,4 +1,4 @@
-require 'minitest/spec'
+require 'spec_helper'
 
 describe Bol::Request do
   describe 'category scope' do
