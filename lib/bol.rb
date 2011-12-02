@@ -17,4 +17,8 @@ module Bol
     @configuration = Configuration.new(options)
     yield @configuration if options.nil?
   end
+
+  def self.search(*args)
+    Category.search(*args)
+  end
 end
