@@ -18,6 +18,10 @@ module Bol
       @attributes[key] = value
     end
 
+    def cover(kind = :medium)
+      attributes[:cover].fetch(kind)
+    end
+
     def method_missing(name, *args)
       if attributes.keys.include?(name)
         if name =~ /=$/

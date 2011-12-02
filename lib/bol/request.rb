@@ -16,6 +16,7 @@ module Bol
 
     def initialize(query)
       @query = query
+      @query.request = self
     end
 
     def params

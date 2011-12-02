@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Bol do
   describe '#configure' do
     it 'should create configuration object' do
-      Bol.configure key: 'foo'
-      Bol.configuration.key.must_equal('foo')
+      Bol.configure access_key: 'foo'
+      Bol.configuration.access_key.must_equal('foo')
     end
 
     it 'should yield config object without argument' do
@@ -18,7 +18,7 @@ describe Bol do
     end
 
     it 'should not yield with argument' do
-      Bol.configure(key: 'foo') { |c| flunk }
+      Bol.configure(access_key: 'foo') { |c| flunk }
     end
   end
 

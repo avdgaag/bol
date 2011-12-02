@@ -1,9 +1,11 @@
 module Bol
   class Configuration
-    ALLOWED_KEYS = %w[key per_page].map(&:to_sym)
+    ALLOWED_KEYS = %w[access_key secret per_page].map(&:to_sym)
 
     def initialize(options = {})
-      raise ArgumentError unless options.nil? or options.respond_to? :each_pair
+      unless options.nil? || options.respond_to?(:each_pair)
+        raise ArgumentError, 'options should be Hash-like object'
+      end
 
       @options = { per_page: 10 }
 
@@ -19,7 +21,10 @@ module Bol
     end
 
     def []=(key, value)
-      raise ArgumentError unless ALLOWED_KEYS.include?(key)
+      unless ALLOWED_KEYS.include?(key)
+        raise ArgumentError, "#{key} is not a valid key"
+      end
+
       @options[key] = value
     end
 

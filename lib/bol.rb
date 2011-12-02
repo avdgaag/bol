@@ -7,6 +7,7 @@ module Bol
   autoload :Query,         'bol/query'
   autoload :Request,       'bol/request'
   autoload :Requests,      'bol/requests'
+  autoload :XmlParser,     'bol/xml_parser'
 
   def self.configuration
     @configuration ||= Configuration.new

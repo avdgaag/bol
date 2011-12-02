@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Bol::Configuration do
   describe 'as a hash' do
     it 'should should set known keys' do
-      c = Bol::Configuration.new key: 'foo'
-      c[:key].must_equal 'foo'
+      c = Bol::Configuration.new access_key: 'foo'
+      c[:access_key].must_equal 'foo'
     end
 
     it 'should raise for unknown keys' do
@@ -13,8 +13,8 @@ describe Bol::Configuration do
 
     it 'should set a single key' do
       c = Bol::Configuration.new
-      c[:key] = 'bar'
-      c[:key].must_equal 'bar'
+      c[:access_key] = 'bar'
+      c[:access_key].must_equal 'bar'
     end
   end
 
@@ -22,8 +22,8 @@ describe Bol::Configuration do
     let(:config) { Bol::Configuration.new }
 
     it 'should should set known keys' do
-      config.key = 'bar'
-      config.key.must_equal 'bar'
+      config.access_key = 'bar'
+      config.access_key.must_equal 'bar'
     end
 
     it 'should raise for unknown keys' do

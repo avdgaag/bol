@@ -1,6 +1,7 @@
 module Bol
   class Query
     attr_reader :category_id
+    attr_accessor :request
 
     def initialize(category_id)
       raise ArgumentError unless category_id.is_a?(Fixnum)
