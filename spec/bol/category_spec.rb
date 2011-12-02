@@ -2,9 +2,21 @@ require 'spec_helper'
 
 describe Bol::Category do
   describe 'combining categories' do
-    it 'should add two categories for a combined scope'
-    it 'should subtract two categories to reduce scope'
-    it 'should manually add category IDs'
+    it 'should add two categories for a combined scope' do
+      cat = Bol::Category.new(1) + Bol::Category.new(2)
+      cat.id.must_equal('1+2')
+    end
+
+    it 'should not duplicate IDs when adding' do
+      cat = Bol::Category.new(1) + Bol::Category.new(2) + Bol::Category.new(2)
+      cat.id.must_equal('1+2')
+    end
+
+    it 'should subtract two categories to reduce scope' do
+      a = Bol::Category.new(1) + Bol::Category.new(2)
+      b = Bol::Category.new(2)
+      (a - b).id.must_equal('1')
+    end
   end
 
   describe '#search' do
@@ -15,8 +27,8 @@ describe Bol::Category do
     end
 
     it 'should set query term' do
-      query = Bol::Category.search 'foo'
-      query.terms.must_equal 'foo'
+      Bol::Requests::Search.expects(:new).with('foo', instance_of(Bol::Query)).returns(stub(query: nil))
+      Bol::Category.search 'foo'
     end
   end
 
@@ -44,12 +56,5 @@ describe Bol::Category do
     it 'should create category list request' do
       cat.must_be_instance_of(Bol::Requests::Category)
     end
-
-    it 'should return array of Category objects'
-  end
-
-  describe 'finding' do
-    it 'should not perform a request using #find'
-    it 'should perform a request when accessing the category name'
   end
 end

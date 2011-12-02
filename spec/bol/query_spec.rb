@@ -15,6 +15,22 @@ describe Bol::Query do
     end
   end
 
+  describe '#has_param?' do
+    let(:q) { Bol::Query.new(0) }
+
+    it 'should be true when object' do
+      q.has_param?(:categoryId).must_equal true
+    end
+
+    it 'should be false when nil' do
+      q.has_param?(:term).must_equal false
+    end
+
+    it 'should be false when not set' do
+      q.has_param?(:foo).must_equal false
+    end
+  end
+
   describe '#limit' do
     let(:q) { Bol::Query.new(0) }
 

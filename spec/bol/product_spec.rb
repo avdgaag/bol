@@ -8,7 +8,8 @@ describe Bol::Product do
     end
 
     it 'should set id param' do
-      r.query.params[:productId].must_equal(1)
+      Bol::Requests::Product.expects(:new).with(1, instance_of(Bol::Query))
+      Bol::Product.find(1)
     end
 
     it 'should return product instance'

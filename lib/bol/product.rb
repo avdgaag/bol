@@ -1,9 +1,7 @@
 module Bol
   class Product
     def self.find(id)
-      q = Query.new(0)
-      q.product_id = id
-      Requests::Product.new(q)
+      Requests::Product.new(id, Query.new(0))
     end
 
     attr_reader :attributes

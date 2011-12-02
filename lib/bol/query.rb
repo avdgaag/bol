@@ -1,12 +1,10 @@
 module Bol
   class Query
-    attr_reader :terms, :category_id
-    attr_accessor :product_id
+    attr_reader :category_id
 
-    def initialize(category_id, terms = nil)
+    def initialize(category_id)
       raise ArgumentError unless category_id.is_a?(Fixnum)
       @category_id = category_id
-      @terms = terms
     end
 
     def params
@@ -17,8 +15,11 @@ module Bol
       p[:offset]           = @offset          if @offset
       p[:sortingMethod]    = @order_key       if @order_key
       p[:sortingAscending] = @order_direction if @order_direction
-      p[:productId]        = @product_id      if @product_id
       p
+    end
+
+    def has_param?(key)
+      params.has_key?(key) and !params[key].nil?
     end
 
     def order(str)

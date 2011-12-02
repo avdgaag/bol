@@ -10,8 +10,17 @@ module Bol
       @id = id
     end
 
+    def +(other)
+      self.class.new [*id.to_s.split('+'), *other.id.to_s.split('+')].uniq.join('+')
+    end
+
+    def -(other)
+      self.class.new id.to_s.split('+').reject { |i| i == other.id.to_s }.join('+')
+    end
+
     def search(terms)
-      request = Requests::Search.new(Query.new(id, terms)).query
+      r = Requests::Search.new(terms, Query.new(id))
+      r.query
     end
 
     def subcategories
@@ -19,7 +28,7 @@ module Bol
     end
 
     def top
-      Requests::List.new(Query.new(id)).query
+      Requests::List.new('top', Query.new(id)).query
     end
   end
 end
