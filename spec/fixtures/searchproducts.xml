@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductSearchResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+
+  <SessionId>FBF1AAB7-753F-4FE9-B263-CA93200323C3</SessionId>
+  <TotalResultSize>202</TotalResultSize>
+  <Product>
+    <Id>1002004010949279</Id>
+    <Title>Harry Potter En De Relieken Van De Dood: Deel 1
+    (S.E.)</Title>
+    <Type>dvd</Type>
+    <ShortDescription>Harry, Ron en Hermelien beginnen aan een
+    levensgevaarlijke missie om het geheim achter Voldemorts
+    onsterfelijkheid 'de Gruzielementen' te vinden en te
+    vernietigen. De drie vrienden zijn nu aan hun lot overgelaten
+    zonder de begeleiding van hun professors en de bescherming van
+    Professor Perkamentus. Ze moeten nu meer dan ooit op elkaar
+    vertrouwen maar er zijn Duistere Krachten onder hen die hen uit
+    elkaar dreigen te drijven. Intussen is de tovenaarswereld een
+    gevaarlijke plek geworden voor alle vi...</ShortDescription>
+    <LongDescription>Harry, Ron en Hermelien beginnen aan een
+    levensgevaarlijke missie om het geheim achter Voldemorts
+    onsterfelijkheid 'de Gruzielementen' te vinden en te
+    vernietigen. De drie vrienden zijn nu aan hun lot overgelaten
+    zonder de begeleiding van hun professors en de bescherming van
+    Professor Perkamentus. Ze moeten nu meer dan ooit op elkaar
+    vertrouwen maar er zijn Duistere Krachten onder hen die hen uit
+    elkaar dreigen te drijven. Intussen is de tovenaarswereld een
+    gevaarlijke plek geworden voor alle vijanden van de Heer Van
+    Het Duister. De lang gevreesde strijd is losgebarsten en
+    Voldemorts Dooddoeners bezetten het Ministerie van Toverkunst
+    en zelfs Zweinstein, waar ze iedereen terroriseren en
+    arresteren die hen tegenwerkt. De enige trofee die ze nog niet
+    in handen hebben en die Voldemort het liefste van allemaal te
+    pakken wil krijgen, is Harry Potter. De Uitverkorene is nu de
+    prooi waar de Dooddoeners op jagen, en ze hebben de opdracht
+    gekregen Harry naar Voldemort te brengen...
+    levend.</LongDescription>
+    <ReleaseDate>2011-04-08+02:00</ReleaseDate>
+    <Ean>5051888073636</Ean>
+    <Rating>3</Rating>
+    <FormatDescription>Dvd</FormatDescription>
+    <FormatCode>DVD</FormatCode>
+    <PackageContents>2 disks</PackageContents>
+    <RecommendedMinAge>12</RecommendedMinAge>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>19.99</Price>
+        <ListPrice>24.99</ListPrice>
+        <AvailabilityCode>170</AvailabilityCode>
+        <AvailabilityDescription>Op werkdagen voor 22.30 uur
+        besteld, morgen in huis</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/dvd/harry-potter-en-de-relieken-van-de-dood-deel-1/1002004010949279/index.html</Main>
+    </Urls>
+    <Actors>
+      <Actor>
+        <Id>737727</Id>
+        <Name>Daniel Radcliffe</Name>
+      </Actor>
+      <Actor>
+        <Id>743164</Id>
+        <Name>Rupert Grint</Name>
+      </Actor>
+      <Actor>
+        <Id>743165</Id>
+        <Name>Emma Watson</Name>
+      </Actor>
+      <Actor>
+        <Id>58780</Id>
+        <Name>Michael Gambon</Name>
+      </Actor>
+      <Actor>
+        <Id>58867</Id>
+        <Name>Alan Rickman</Name>
+      </Actor>
+      <Actor>
+        <Id>2767</Id>
+        <Name>Ralph Fiennes</Name>
+      </Actor>
+      <Actor>
+        <Id>754</Id>
+        <Name>Helena Bonham Carter</Name>
+      </Actor>
+      <Actor>
+        <Id>58764</Id>
+        <Name>Maggie Smith</Name>
+      </Actor>
+      <Actor>
+        <Id>58928</Id>
+        <Name>Brendan Gleeson</Name>
+      </Actor>
+      <Actor>
+        <Id>58239</Id>
+        <Name>Emma Thompson</Name>
+      </Actor>
+      <Actor>
+        <Id>79530</Id>
+        <Name>Bill Nighy</Name>
+      </Actor>
+      <Actor>
+        <Id>743167</Id>
+        <Name>Harry Melling</Name>
+      </Actor>
+      <Actor>
+        <Id>69900</Id>
+        <Name>Richard Griffiths</Name>
+      </Actor>
+      <Actor>
+        <Id>61653</Id>
+        <Name>Julie Walters</Name>
+      </Actor>
+      <Actor>
+        <Id>2668663</Id>
+        <Name>Emma Watson</Name>
+      </Actor>
+    </Actors>
+    <Directors>
+      <Director>
+        <Id>2267336</Id>
+        <Name>David Yates</Name>
+      </Director>
+    </Directors>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/9/7/2/9/1002004010949279.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/9/7/2/9/1002004010949279.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/9/7/2/9/1002004010949279.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/9/7/2/9/1002004010949279.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/9/7/2/9/1002004010949279.jpg</ExtraLarge>
+    </Images>
+    <Promotions>
+      <Promotion>
+        <Title>Het is Zomerzotheid bij bol.com!</Title>
+        <Description>Ik ga met vakantie en neem
+        mee; Bol.com heeft de artikelen die in
+        elke koffer* thuishoren nu extra scherp geprijsd. Bekijk
+        daarom nu onze vakantie-aanbiedingen en profiteer van
+        kortingen tot 50%.</Description>
+        <Url>
+        http://www.bol.com/nl/m/service/zomerzotheid/index.html</Url>
+        <UrlText>Bekijk alle actie-artikelen tijdens de
+        Zomerzotheid</UrlText>
+      </Promotion>
+    </Promotions>
+  </Product>
+  <Product>
+    <Id>1002004010949280</Id>
+    <Title>Harry Potter En De Relieken Van De Dood: Deel 1
+    (S.E.)</Title>
+    <Subtitle>(Blu-ray is niet afspeelbaar in normale
+    DVD-spelers!)</Subtitle>
+    <Type>dvd</Type>
+    <ShortDescription>Harry, Ron en Hermelien beginnen aan een
+    levensgevaarlijke missie om het geheim achter Voldemorts
+    onsterfelijkheid 'de Gruzielementen' te vinden en te
+    vernietigen. De drie vrienden zijn nu aan hun lot overgelaten
+    zonder de begeleiding van hun professors en de bescherming van
+    Professor Perkamentus. Ze moeten nu meer dan ooit op elkaar
+    vertrouwen maar er zijn Duistere Krachten onder hen die hen uit
+    elkaar dreigen te drijven. Intussen is de tovenaarswereld een
+    gevaarlijke plek geworden voor alle vi...</ShortDescription>
+    <LongDescription>Harry, Ron en Hermelien beginnen aan een
+    levensgevaarlijke missie om het geheim achter Voldemorts
+    onsterfelijkheid 'de Gruzielementen' te vinden en te
+    vernietigen. De drie vrienden zijn nu aan hun lot overgelaten
+    zonder de begeleiding van hun professors en de bescherming van
+    Professor Perkamentus. Ze moeten nu meer dan ooit op elkaar
+    vertrouwen maar er zijn Duistere Krachten onder hen die hen uit
+    elkaar dreigen te drijven. Intussen is de tovenaarswereld een
+    gevaarlijke plek geworden voor alle vijanden van de Heer Van
+    Het Duister. De lang gevreesde strijd is losgebarsten en
+    Voldemorts Dooddoeners bezetten het Ministerie van Toverkunst
+    en zelfs Zweinstein, waar ze iedereen terroriseren en
+    arresteren die hen tegenwerkt. De enige trofee die ze nog niet
+    in handen hebben en die Voldemort het liefste van allemaal te
+    pakken wil krijgen, is Harry Potter. De Uitverkorene is nu de
+    prooi waar de Dooddoeners op jagen, en ze hebben de opdracht
+    gekregen Harry naar Voldemort te brengen...
+    levend.</LongDescription>
+    <ReleaseDate>2011-04-08+02:00</ReleaseDate>
+    <Ean>5051888073674</Ean>
+    <Rating>4</Rating>
+    <FormatDescription>Blu-ray</FormatDescription>
+    <FormatCode>BLURAY</FormatCode>
+    <RecommendedMinAge>12</RecommendedMinAge>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>21.99</Price>
+        <ListPrice>29.99</ListPrice>
+        <AvailabilityCode>170</AvailabilityCode>
+        <AvailabilityDescription>Op werkdagen voor 22.30 uur
+        besteld, morgen in huis</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/dvd/harry-potter-en-de-relieken-van-de-dood-deel-1/1002004010949280/index.html</Main>
+    </Urls>
+    <Actors>
+      <Actor>
+        <Id>737727</Id>
+        <Name>Daniel Radcliffe</Name>
+      </Actor>
+      <Actor>
+        <Id>743164</Id>
+        <Name>Rupert Grint</Name>
+      </Actor>
+      <Actor>
+        <Id>743165</Id>
+        <Name>Emma Watson</Name>
+      </Actor>
+      <Actor>
+        <Id>58780</Id>
+        <Name>Michael Gambon</Name>
+      </Actor>
+      <Actor>
+        <Id>58867</Id>
+        <Name>Alan Rickman</Name>
+      </Actor>
+      <Actor>
+        <Id>2767</Id>
+        <Name>Ralph Fiennes</Name>
+      </Actor>
+      <Actor>
+        <Id>754</Id>
+        <Name>Helena Bonham Carter</Name>
+      </Actor>
+      <Actor>
+        <Id>58764</Id>
+        <Name>Maggie Smith</Name>
+      </Actor>
+      <Actor>
+        <Id>58928</Id>
+        <Name>Brendan Gleeson</Name>
+      </Actor>
+      <Actor>
+        <Id>58239</Id>
+        <Name>Emma Thompson</Name>
+      </Actor>
+      <Actor>
+        <Id>61653</Id>
+        <Name>Julie Walters</Name>
+      </Actor>
+      <Actor>
+        <Id>2668663</Id>
+        <Name>Emma Watson</Name>
+      </Actor>
+      <Actor>
+        <Id>79530</Id>
+        <Name>Bill Nighy</Name>
+      </Actor>
+      <Actor>
+        <Id>69900</Id>
+        <Name>Richard Griffiths</Name>
+      </Actor>
+      <Actor>
+        <Id>743167</Id>
+        <Name>Harry Melling</Name>
+      </Actor>
+    </Actors>
+    <Directors>
+      <Director>
+        <Id>2267336</Id>
+        <Name>David Yates</Name>
+      </Director>
+    </Directors>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/0/8/2/9/1002004010949280.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/0/8/2/9/1002004010949280.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/0/8/2/9/1002004010949280.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/0/8/2/9/1002004010949280.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/0/8/2/9/1002004010949280.jpg</ExtraLarge>
+    </Images>
+  </Product>
+  <Category>
+    <Id>8299</Id>
+    <Name>Boeken</Name>
+    <ProductCount>128</ProductCount>
+  </Category>
+  <Category>
+    <Id>3132</Id>
+    <Name>Muziek</Name>
+    <ProductCount>12</ProductCount>
+  </Category>
+  <Category>
+    <Id>3133</Id>
+    <Name>Dvd</Name>
+    <ProductCount>30</ProductCount>
+  </Category>
+  <Category>
+    <Id>3135</Id>
+    <Name>Games</Name>
+    <ProductCount>29</ProductCount>
+  </Category>
+  <Category>
+    <Id>7934</Id>
+    <Name>Speelgoed</Name>
+    <ProductCount>8</ProductCount>
+  </Category>
+</ProductSearchResponse>

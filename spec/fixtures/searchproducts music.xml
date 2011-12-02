@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductSearchResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+
+  <SessionId>61BDDAA7-C6F5-4CC6-A136-22D9A6A8A50B</SessionId>
+  <TotalResultSize>8</TotalResultSize>
+  <Product>
+    <Id>1000004001289434</Id>
+    <Title>Glass: Violin Concerto, Company etc / Adele Anthony,
+    Takuo Yuasa et al</Title>
+    <Type>music</Type>
+    <ReleaseDate>2005-06-22+02:00</ReleaseDate>
+    <Ean>0636943456828</Ean>
+    <FormatDescription>Cd (album)</FormatDescription>
+    <FormatCode>CD</FormatCode>
+    <PackageContents>1 disk</PackageContents>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>9.99</Price>
+        <ListPrice>11.99</ListPrice>
+        <AvailabilityCode>167</AvailabilityCode>
+        <AvailabilityDescription>5-10
+        werkdagen</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/muziek/glass-violin-concerto-company-etc-adele-anthony-takuo-yuasa-et-al/1000004001289434/index.html</Main>
+    </Urls>
+    <Artists>
+      <Artist>
+        <Id>832167</Id>
+        <Name>Takuo Yuasa</Name>
+      </Artist>
+      <Artist>
+        <Id>779095</Id>
+        <Name>Philip Glass</Name>
+      </Artist>
+      <Artist>
+        <Id>861335</Id>
+        <Name>Ulster Orchestra</Name>
+      </Artist>
+    </Artists>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/4/3/4/9/1000004001289434.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/4/3/4/9/1000004001289434.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/4/3/4/9/1000004001289434.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/4/3/4/9/1000004001289434.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/4/3/4/9/1000004001289434.jpg</ExtraLarge>
+    </Images>
+  </Product>
+  <Product>
+    <Id>1001004011314378</Id>
+    <Title>Adele</Title>
+    <Subtitle>21: Pvg</Subtitle>
+    <Type>book</Type>
+    <Publisher>Music Sales Ltd</Publisher>
+    <ReleaseDate>2011-01-24+01:00</ReleaseDate>
+    <Ean>9781780380216</Ean>
+    <BindingCode>1191</BindingCode>
+    <BindingDescription>Other media</BindingDescription>
+    <LanguageCode>en</LanguageCode>
+    <LanguageDescription>Engels</LanguageDescription>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>19.99</Price>
+        <ListPrice>21.99</ListPrice>
+        <AvailabilityCode>174</AvailabilityCode>
+        <AvailabilityDescription>3-4
+        werkdagen</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/engelse-boeken/adele/1001004011314378/index.html</Main>
+    </Urls>
+    <Images />
+  </Product>
+  <Category>
+    <Id>8299</Id>
+    <Name>Boeken</Name>
+    <ProductCount>4</ProductCount>
+  </Category>
+  <Category>
+    <Id>3132</Id>
+    <Name>Muziek</Name>
+    <ProductCount>2</ProductCount>
+  </Category>
+  <Category>
+    <Id>3133</Id>
+    <Name>Dvd</Name>
+    <ProductCount>2</ProductCount>
+  </Category>
+</ProductSearchResponse>

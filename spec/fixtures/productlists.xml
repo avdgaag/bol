@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductListResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+  <SessionId>BEFA78E4-FA97-46E6-8C82-1792F485B16C</SessionId>
+  <TotalResultSize>12128</TotalResultSize>
+  <Product>
+    <Id>1001004011242363</Id>
+    <Title>In mijn dromen</Title>
+    <Type>book</Type>
+    <Publisher>Anthos</Publisher>
+    <ShortDescription>Rosalie heeft een kapperszaak in de Pijp in
+    Amsterdam en is getrouwd met de zakelijke en ordelijke Jeroen.
+    Een vakantie naar Marrakech zou hun relatie weer passie moeten
+    geven maar de reis eindigt in een nachtmerrie. Jeroen wil geen
+    gehoor geven aan Rosalies slechte voorgevoel en het vliegtuig
+    waarin Jeroen alleen terugkeert stort neer. Terug in
+    Amsterdam beseft Rosalie dat ze haar voorspellende dromen niet
+    langer kan negeren. Haar besluit om de politie in te lichten
+    over haar vermoeden dat het v...</ShortDescription>
+    <LongDescription>Rosalie heeft een kapperszaak in de Pijp in
+    Amsterdam en is getrouwd met de zakelijke en ordelijke Jeroen.
+    Een vakantie naar Marrakech zou hun relatie weer passie moeten
+    geven maar de reis eindigt in een nachtmerrie. Jeroen wil geen
+    gehoor geven aan Rosalies slechte voorgevoel en het vliegtuig
+    waarin Jeroen alleen terugkeert stort neer.&lt;br/ &gt;Terug in
+    Amsterdam beseft Rosalie dat ze haar voorspellende dromen niet
+    langer kan negeren. Haar besluit om de politie in te lichten
+    over haar vermoeden dat het vliegtuigongeluk geen ongeluk was,
+    maakt haar echter alleen maar wanhopiger, want men neemt haar
+    niet serieus. Intussen probeert ze met behulp van haar vrienden
+    en collega"s de draad van het leven weer op te pakken, maar
+    haar voorspellende dromen vergemakkelijken haar situatie
+    niet</LongDescription>
+    <ReleaseDate>2011-06-23+02:00</ReleaseDate>
+    <Ean>9789041416841</Ean>
+    <BindingCode>ING</BindingCode>
+    <BindingDescription>Paperback</BindingDescription>
+    <LanguageCode>nl</LanguageCode>
+    <LanguageDescription>Nederlands</LanguageDescription>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>19.95</Price>
+        <AvailabilityCode>170</AvailabilityCode>
+        <AvailabilityDescription>Op werkdagen voor 22.30 uur
+        besteld, morgen in huis</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/nederlandse-boeken/in-mijn-dromen/1001004011242363/index.html</Main>
+    </Urls>
+    <Authors>
+      <Author>
+        <Id>55945</Id>
+        <Name>Simone van der Vlugt</Name>
+      </Author>
+    </Authors>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/3/6/3/2/1001004011242363.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/3/6/3/2/1001004011242363.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/3/6/3/2/1001004011242363.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/3/6/3/2/1001004011242363.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/3/6/3/2/1001004011242363.jpg</ExtraLarge>
+    </Images>
+  </Product>
+  <Product>
+    <Id>1001004011459347</Id>
+    <Title>Kort</Title>
+    <Type>book</Type>
+    <Publisher>Bezige Bij B.V., Uitgeverij De</Publisher>
+    <ShortDescription>Tomas Ross is al meer dan dertig jaar een van
+    de meest toonaangevende thrillerauteurs in ons land. Hij is de
+    Godfather van de Nederlandse faction; in zijn spannende en
+    gedurfde thrillers balanceert hij op de scheidslijn tussen feit
+    en fictie. Vele politieke kwesties nam hij al onder
+    vuur en ook het koningshuis ontkomt niet aan zijn kritische oog
+    en scherpe pen. In Kort zijn twintig van Ross beste
+    verhalen voor het eerst gebundeld in een
+    uitgave. Twintig verhalen over kleine criminaliteit en
+    georganiseerde misdaad, de bvd en het koningshuis, stom toeval
+    en het werk van een meesterbrein. Twintig verhalen die waar
+    gebeurd (hadden kunnen) zijn. Een meesterproef van een
+    schrijver op de toppen van zijn talent.</ShortDescription>
+    <LongDescription>Tomas Ross is al meer dan dertig jaar een van
+    de meest toonaangevende thrillerauteurs in ons land. Hij is de
+    Godfather van de Nederlandse faction; in zijn spannende en
+    gedurfde thrillers balanceert hij op de scheidslijn tussen feit
+    en fictie. Vele politieke kwesties nam hij al onder
+    vuur en ook het koningshuis ontkomt niet aan zijn kritische oog
+    en scherpe pen. In Kort zijn twintig van Ross beste
+    verhalen voor het eerst gebundeld in een
+    uitgave. Twintig verhalen over kleine criminaliteit en
+    georganiseerde misdaad, de bvd en het koningshuis, stom toeval
+    en het werk van een meesterbrein. Twintig verhalen die waar
+    gebeurd (hadden kunnen) zijn. Een meesterproef van een
+    schrijver op de toppen van zijn talent.</LongDescription>
+    <ReleaseDate>2011-06-02+02:00</ReleaseDate>
+    <Ean>9789023472315</Ean>
+    <BindingCode>EBOOK</BindingCode>
+    <BindingDescription>Digitaal boek</BindingDescription>
+    <LanguageCode>nl</LanguageCode>
+    <LanguageDescription>Nederlands</LanguageDescription>
+    <FormatCode>Adobe ePub</FormatCode>
+    <Offers>
+      <Offer>
+        <State>new</State>
+        <Price>4.95</Price>
+        <ListPrice>7.95</ListPrice>
+        <AvailabilityCode>140</AvailabilityCode>
+        <AvailabilityDescription>Direct te
+        downloaden.</AvailabilityDescription>
+        <Supplier>
+          <Id>-1</Id>
+          <Name>bol.com</Name>
+        </Supplier>
+      </Offer>
+    </Offers>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/nederlandse-boeken/kort/1001004011459347/index.html</Main>
+    </Urls>
+    <Authors>
+      <Author>
+        <Id>30715</Id>
+        <Name>Tomas Ross</Name>
+      </Author>
+    </Authors>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/7/4/3/9/1001004011459347.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/7/4/3/9/1001004011459347.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/7/4/3/9/1001004011459347.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/7/4/3/9/1001004011459347.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/7/4/3/9/1001004011459347.jpg</ExtraLarge>
+    </Images>
+    <Promotions>
+      <Promotion>
+        <Title>Het is Zomerzotheid bij bol.com!</Title>
+        <Description>Ik ga met vakantie en neem
+        mee. Bol.com heeft de artikelen die in
+        elke koffer thuishoren nu extra scherp geprijsd. Bekijk
+        daarom nu onze vakantie-aanbiedingen en profiteer van
+        kortingen tot 50%.</Description>
+        <Url>
+        http://www.bol.com/nl/m/service/zomerzotheid/index.html</Url>
+        <UrlText>Bekijk alle actie-artikelen tijdens de
+        Zomerzotheid</UrlText>
+      </Promotion>
+    </Promotions>
+  </Product>
+</ProductListResponse>
