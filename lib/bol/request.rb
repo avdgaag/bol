@@ -6,7 +6,7 @@ require 'uri'
 module Bol
   class Request
     extend Forwardable
-    attr_reader :query, :response
+    attr_reader :query, :response, :proxy
 
     DOMAIN             = 'openapi.bol.com'
     ConfigurationError = Class.new(Exception)
@@ -29,6 +29,7 @@ module Bol
     def initialize(query)
       @query = query
       @query.request = self
+      @proxy = ResultProxy.new(self)
     end
 
     def params

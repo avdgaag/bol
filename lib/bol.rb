@@ -8,6 +8,7 @@ module Bol
   autoload :Request,       'bol/request'
   autoload :Requests,      'bol/requests'
   autoload :XmlParser,     'bol/xml_parser'
+  autoload :ResultProxy,   'bol/result_proxy'
 
   def self.configuration
     @configuration ||= Configuration.new

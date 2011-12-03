@@ -1,7 +1,7 @@
 module Bol
   class Product
     def self.find(id)
-      Requests::Product.new(id, Query.new(0))
+      Requests::Product.new(id, Query.new(0)).proxy.product
     end
 
     attr_reader :attributes
