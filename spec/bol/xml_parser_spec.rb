@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe Bol::XmlParser do
-  def fixture(name)
-    File.read(File.expand_path(File.join("../../fixtures/#{name}"), __FILE__))
-  end
-
   describe 'parsing products' do
     let(:product) { Bol::XmlParser.new(fixture('products.xml')).product }
 
@@ -40,10 +36,32 @@ describe Bol::XmlParser do
   end
 
   describe 'parsing product search results' do
-    let(:parser) { Bol::XmlParser.new(fixture('searchproducts-music.xml')) }
+    let(:products) { Bol::XmlParser.new(fixture('searchproducts-music.xml')).products }
+
+    it 'should parse into array of products' do
+      products.size.must_equal 2
+      products[0].must_be_instance_of(Bol::Product)
+      products[1].must_be_instance_of(Bol::Product)
+    end
+
+    it 'should have parsed xml into products' do
+      products[0].title.must_equal 'Glass: Violin Concerto, Company etc / Adele Anthony, Takuo Yuasa et al'
+      products[1].title.must_equal 'Adele'
+    end
   end
 
   describe 'parsing product listings' do
-    let(:parser) { Bol::XmlParser.new(fixture('productlists.xml')) }
+    let(:products) { Bol::XmlParser.new(fixture('productlists.xml')).products }
+
+    it 'should parse into array of products' do
+      products.size.must_equal 2
+      products[0].must_be_instance_of(Bol::Product)
+      products[1].must_be_instance_of(Bol::Product)
+    end
+
+    it 'should have parsed xml into products' do
+      products[0].title.must_equal 'In mijn dromen'
+      products[1].title.must_equal 'Kort'
+    end
   end
 end
