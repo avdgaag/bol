@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ['arjan@arjanvandergaag.nl']
   s.homepage    = "https://github.com/avdgaag/bol"
   s.summary     = %q{Simple Ruby wrapper around the bol.com developer API}
-  s.description = %q{Access the bol.com product catalog from a Ruby project.}
+  s.description = %q{Access the bol.com product catalog from a Ruby project. You can search products, list top selling products and find product information for individual catalog items.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
