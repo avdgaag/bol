@@ -27,8 +27,17 @@ module Bol
       Requests::Category.new(Query.new(id))
     end
 
-    def top
-      Requests::List.new('top', Query.new(id)).query
+    {
+      top_products: 'toplist_default',
+      top_products_overall: 'toplist_overall',
+      top_products_last_week: 'toplist_last_week',
+      top_products_last_two_months: 'toplist_last_two_months',
+      new_products: 'new',
+      preorder_products: 'preorder'
+    }.each_pair do |method, type|
+      define_method method do
+        Requests::List.new(type, Query.new(id)).proxy
+      end
     end
   end
 end
