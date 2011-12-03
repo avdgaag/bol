@@ -39,7 +39,7 @@ describe Bol::Category do
   end
 
   describe 'lists' do
-    let(:cat) { Bol::Category.new.top }
+    let(:cat) { Bol::Category.new.top_products }
 
     it 'should create a list request' do
       cat.must_be_instance_of(Bol::ResultProxy)
