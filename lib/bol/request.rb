@@ -14,6 +14,18 @@ module Bol
 
     def_delegators :response, :code, :body
 
+    def self.ignore_params(*args)
+      @params_to_ignore ||= []
+      [*args].each do |arg|
+        @params_to_ignore << arg.to_sym
+      end
+    end
+
+    def self.ignored_param?(name)
+      @params_to_ignore ||= []
+      @params_to_ignore.include?(name.to_sym)
+    end
+
     def initialize(query)
       @query = query
       @query.request = self
@@ -21,12 +33,19 @@ module Bol
 
     def params
       @params ||= @query.params.map do |k, v|
-        "#{URI.escape(k.to_s)}=#{URI.escape(v.to_s)}"
-      end.join('&')
+        unless self.class.ignored_param?(k)
+          "#{URI.escape(k.to_s)}=#{URI.escape(v.to_s)}"
+        end
+      end.compact.join('&')
     end
 
     def uri
-      @uri ||= URI.parse("https://#{DOMAIN}#{path}")
+      uri = if params.empty?
+        "https://#{DOMAIN}#{path}"
+      else
+        "https://#{DOMAIN}#{path}?#{params}"
+      end
+      @uri ||= URI.parse(uri)
     end
 
     def fetch
