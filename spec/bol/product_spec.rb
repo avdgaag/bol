@@ -3,16 +3,16 @@ require 'spec_helper'
 describe Bol::Product do
   describe '#find' do
     let(:r) { Bol::Product.find(1) }
-    it 'should create new request' do
-      r.must_be_instance_of(Bol::Requests::Product)
+
+    before do
+      Bol.stubs(:configuration).returns({ access_key: 'foo', secret: 'bar' })
+      FakeWeb.register_uri(:get, 'https://openapi.bol.com/openapi/services/rest/catalog/v3/products/1?categoryId=0', body: fixture('products.xml'))
     end
 
-    it 'should set id param' do
-      Bol::Requests::Product.expects(:new).with(1, instance_of(Bol::Query))
-      Bol::Product.find(1)
+    it 'should return product instance' do
+      r.must_be_instance_of Bol::Product
     end
 
-    it 'should return product instance'
     it 'should raise error when not found'
   end
 
@@ -29,14 +29,26 @@ describe Bol::Product do
       product.foo.must_equal('bar')
     end
 
-    describe 'release date' do
-      it 'should parse to a Datetime'
-    end
-
     describe '#cover' do
-      it 'should return medium by default'
-      it 'should take format as argument'
-      it 'should raise on invalid format'
+      let(:product) { Bol::Product.new }
+      before do
+        product.attributes[:cover] = {
+          medium: 'foo',
+          small: 'bar'
+        }
+      end
+
+      it 'should return medium by default' do
+        product.cover.must_equal('foo')
+      end
+
+      it 'should take format as argument' do
+        product.cover(:small).must_equal('bar')
+      end
+
+      it 'should raise on invalid format' do
+        proc { product.cover(:baz) }.must_raise(KeyError)
+      end
     end
   end
 end
