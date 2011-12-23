@@ -4,17 +4,17 @@ describe Bol do
   describe '#configure' do
     it 'should create configuration object' do
       Bol.configure access_key: 'foo'
-      Bol.configuration.access_key.must_equal('foo')
+      Bol.configuration.access_key.should == 'foo'
     end
 
     it 'should yield config object without argument' do
       Bol.configure do |c|
-        c.must_equal Bol.configuration
+        c.should == Bol.configuration
       end
     end
 
     it 'should raise with non-hash argument' do
-      proc { Bol.configure 'foo' }.must_raise ArgumentError
+      expect { Bol.configure 'foo' }.to raise_error ArgumentError
     end
 
     it 'should not yield with argument' do
