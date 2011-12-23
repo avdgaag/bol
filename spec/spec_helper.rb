@@ -1,6 +1,4 @@
-require 'minitest/spec'
-require 'minitest/autorun'
-require 'mocha'
+require 'rspec'
 require 'fakeweb'
 require 'bol'
 
