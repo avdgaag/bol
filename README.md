@@ -10,7 +10,10 @@ available as a Gem. Currently in alpha stage.
 Here are the currently working operations:
 
 ```ruby
-Bol::Product.find(params[:id])
+product = Bol::Product.find(params[:id])
+product.title
+product.cover(:medium)
+product.referral_url('my_associate_id')
 Bol.search(params[:query]).limit(10).offset(10).order('sales_ranking ASC')
 Bol.search(params[:query]).page(params[:page])
 Bol::Category.new(params[:id]).search(params[:query])
