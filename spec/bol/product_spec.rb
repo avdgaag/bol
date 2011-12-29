@@ -5,12 +5,12 @@ describe Bol::Product do
     let(:r) { Bol::Product.find(1) }
 
     before do
-      Bol.stubs(:configuration).returns({ access_key: 'foo', secret: 'bar' })
+      Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
       FakeWeb.register_uri(:get, 'https://openapi.bol.com/openapi/services/rest/catalog/v3/products/1?categoryId=0', body: fixture('products.xml'))
     end
 
     it 'should return product instance' do
-      r.must_be_instance_of Bol::Product
+      r.should be_instance_of Bol::Product
     end
 
     it 'should raise error when not found'
@@ -20,13 +20,13 @@ describe Bol::Product do
     it 'should delegate [] to attributes' do
       product = Bol::Product.new
       product.attributes[:foo] = 'bar'
-      product[:foo].must_equal('bar')
+      product[:foo].should == 'bar'
     end
 
     it 'should expose attributes as methods' do
       product = Bol::Product.new
       product.attributes[:foo] = 'bar'
-      product.foo.must_equal('bar')
+      product.foo.should == 'bar'
     end
 
     describe 'referral_url' do
@@ -39,7 +39,7 @@ describe Bol::Product do
       end
 
       it 'should generate referral URL' do
-        product.referral_url('foo').must_equal("http://partnerprogramma.bol.com/click/click?p=1&t=url&s=foo&url=http%3A%2F%2Ffoo.bar&f=API&subid=qux&name=bla")
+        product.referral_url('foo').should == "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=foo&url=http%3A%2F%2Ffoo.bar&f=API&subid=qux&name=bla"
       end
     end
 
@@ -53,15 +53,15 @@ describe Bol::Product do
       end
 
       it 'should return medium by default' do
-        product.cover.must_equal('foo')
+        product.cover.should == 'foo'
       end
 
       it 'should take format as argument' do
-        product.cover(:small).must_equal('bar')
+        product.cover(:small).should == 'bar'
       end
 
       it 'should raise on invalid format' do
-        proc { product.cover(:baz) }.must_raise(KeyError)
+        expect { product.cover(:baz) }.to raise_error KeyError
       end
     end
   end
