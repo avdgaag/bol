@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Bol
   class Product
     def self.find(id)
@@ -20,6 +22,16 @@ module Bol
 
     def cover(kind = :medium)
       attributes[:cover].fetch(kind)
+    end
+
+    def referral_url(site_id)
+      format = "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=%s&url=%s&f=API&subid=%s&name=%s"
+      format % [
+        site_id,
+        attributes.fetch(:url),
+        attributes.fetch(:id),
+        attributes.fetch(:title),
+      ].map { |p| CGI.escape(p) }
     end
 
     def method_missing(name, *args)

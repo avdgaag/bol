@@ -29,6 +29,20 @@ describe Bol::Product do
       product.foo.must_equal('bar')
     end
 
+    describe 'referral_url' do
+      let(:product) { Bol::Product.new }
+
+      before do
+        product.attributes[:url]   = 'http://foo.bar'
+        product.attributes[:id]    = 'qux'
+        product.attributes[:title] = 'bla'
+      end
+
+      it 'should generate referral URL' do
+        product.referral_url('foo').must_equal("http://partnerprogramma.bol.com/click/click?p=1&t=url&s=foo&url=http%3A%2F%2Ffoo.bar&f=API&subid=qux&name=bla")
+      end
+    end
+
     describe '#cover' do
       let(:product) { Bol::Product.new }
       before do
