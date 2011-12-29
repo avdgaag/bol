@@ -35,14 +35,11 @@ module Bol
     end
 
     def method_missing(name, *args)
-      if attributes.keys.include?(name)
-        if name =~ /=$/
-          attributes[name] = *args
-        else
-          attributes[name]
-        end
+      return super unless attributes.keys.include?(name)
+      if name =~ /=$/
+        attributes[name] = *args
       else
-        super
+        attributes[name]
       end
     end
 
