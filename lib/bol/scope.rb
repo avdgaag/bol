@@ -1,9 +1,5 @@
 module Bol
-  class Category
-    def self.search(*args)
-      new(0).search(*args)
-    end
-
+  class Scope
     attr_reader :id
 
     def initialize(id = 0)

@@ -1,7 +1,7 @@
 require 'bol/version'
 
 module Bol
-  autoload :Category,      'bol/category'
+  autoload :Scope,         'bol/scope'
   autoload :Configuration, 'bol/configuration'
   autoload :Product,       'bol/product'
   autoload :Query,         'bol/query'
@@ -24,6 +24,6 @@ module Bol
   end
 
   def self.search(*args)
-    Category.search(*args)
+    Scope.new.search(*args)
   end
 end
