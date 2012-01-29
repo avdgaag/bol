@@ -7,6 +7,15 @@ describe Bol do
       Bol.configuration.access_key.should == 'foo'
     end
 
+    it 'should reset configuration' do
+      Bol.configure access_key: 'foo'
+      expect {
+        Bol.reset_configuration
+      }.to change {
+        Bol.configuration.access_key
+      }.to nil
+    end
+
     it 'should yield config object without argument' do
       Bol.configure do |c|
         c.should == Bol.configuration
@@ -20,13 +29,5 @@ describe Bol do
     it 'should not yield with argument' do
       Bol.configure(access_key: 'foo') { |c| flunk }
     end
-  end
-
-  describe '#products' do
-    it 'should delegate to new empty category products'
-  end
-
-  describe '#search' do
-    it 'should delegate to new empty category search'
   end
 end
