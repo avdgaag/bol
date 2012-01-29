@@ -74,11 +74,12 @@ describe Bol::Request do
   end
 
   describe Bol::Requests::Search do
-    let(:request) { Bol::Requests::Search.new('foo', query) }
+    let(:query)   { Bol::Query.new(1).limit(3).search('foo') }
+    let(:request) { Bol::Requests::Search.new(query) }
 
     it 'should get from correct URL' do
       request.uri.to_s.should ==
-        'https://openapi.bol.com/openapi/services/rest/catalog/v3/searchproducts/foo?categoryId=1&nrProducts=3'
+        'https://openapi.bol.com/openapi/services/rest/catalog/v3/searchresults?categoryId=1&nrProducts=3&term=foo'
     end
 
     it 'should require search terms' do
@@ -86,8 +87,9 @@ describe Bol::Request do
     end
 
     it 'should encode the search terms' do
-      Bol::Requests::Search.new('foo bar', query).uri.to_s.should ==
-        'https://openapi.bol.com/openapi/services/rest/catalog/v3/searchproducts/foo%20bar?categoryId=1&nrProducts=3'
+      query = Bol::Query.new(1).limit(3).search('foo bar')
+      Bol::Requests::Search.new(query).uri.to_s.should ==
+        'https://openapi.bol.com/openapi/services/rest/catalog/v3/searchresults?categoryId=1&nrProducts=3&term=foo%20bar'
     end
   end
 

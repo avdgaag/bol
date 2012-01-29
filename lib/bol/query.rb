@@ -16,11 +16,18 @@ module Bol
       p[:offset]           = @offset          if @offset
       p[:sortingMethod]    = @order_key       if @order_key
       p[:sortingAscending] = @order_direction if @order_direction
+      p[:term]             = @term            if @term
       p
     end
 
     def has_param?(key)
       params.has_key?(key) and !params[key].nil?
+    end
+
+    def search(term = nil)
+      return @term if term.nil?
+      @term = term
+      self
     end
 
     def order(str)

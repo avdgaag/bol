@@ -27,7 +27,7 @@ describe Bol::Category do
     end
 
     it 'should set query term' do
-      Bol::Requests::Search.should_receive(:new).with('foo', instance_of(Bol::Query)).and_return(stub(proxy: nil, query: nil))
+      Bol::Requests::Search.should_receive(:new).with(instance_of(Bol::Query)).and_return(stub(proxy: nil, query: nil))
       Bol::Category.search 'foo'
     end
   end

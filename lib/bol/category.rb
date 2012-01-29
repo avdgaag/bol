@@ -19,7 +19,9 @@ module Bol
     end
 
     def search(terms)
-      Requests::Search.new(terms, Query.new(id)).proxy
+      q = Query.new(id)
+      q.search terms
+      Requests::Search.new(q).proxy
     end
 
     def subcategories

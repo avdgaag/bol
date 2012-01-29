@@ -108,6 +108,27 @@ describe Bol::Query do
     end
   end
 
+  describe '#search' do
+    let(:q) { Bol::Query.new(0) }
+
+    it 'should add the argument' do
+      q.search('foo bar').search.should == 'foo bar'
+    end
+
+    it 'should add paramater to request' do
+      q.search('foo bar')
+      q.params[:term].should == 'foo bar'
+    end
+
+    it 'should not add parameter when not set' do
+      q.params.keys.should_not include(:term)
+    end
+
+    it 'should return query' do
+      q.search('foo').should == q
+    end
+  end
+
   describe '#order' do
     let(:q) { Bol::Query.new(0) }
 
