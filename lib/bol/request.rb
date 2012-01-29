@@ -80,8 +80,18 @@ application/xml
 #{date}
 x-openapi-date:#{date}
 #{path}
+#{signature_params}
 EOS
+
       Bol.configuration[:access_key] + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha256', Bol.configuration[:secret], msg.chomp)).sub(/\n/, '')
+    end
+
+    def signature_params
+      @query.params.map do |k, v|
+        unless self.class.ignored_param?(k)
+          "&#{k}=#{v}"
+        end
+      end.compact.sort.join("\n")
     end
 
     # overridden in subclasses
