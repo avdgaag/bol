@@ -18,6 +18,18 @@ describe Bol::Configuration do
     end
   end
 
+  describe 'validation' do
+    it 'should raise error when not properly configured' do
+      c = Bol::Configuration.new
+      expect { c.validate }.to raise_error(Bol::ConfigurationError)
+    end
+
+    it 'should not raise error when all keys are configured' do
+      c = Bol::Configuration.new access_key: 'foo', secret: 'bar'
+      expect { c.validate }.to_not raise_error(Bol::ConfigurationError)
+    end
+  end
+
   describe 'as attributes' do
     let(:config) { Bol::Configuration.new }
 

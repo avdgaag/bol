@@ -14,6 +14,10 @@ module Bol
     @configuration ||= Configuration.new
   end
 
+  def self.reset_configuration
+    @configuration = nil
+  end
+
   def self.configure(options = nil)
     @configuration = Configuration.new(options)
     yield @configuration if options.nil?

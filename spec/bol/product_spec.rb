@@ -5,7 +5,7 @@ describe Bol::Product do
     let(:r) { Bol::Product.find(1) }
 
     before do
-      Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
+      Bol.configure access_key: 'foo', secret: 'bar'
       FakeWeb.register_uri(:get, 'https://openapi.bol.com/openapi/services/rest/catalog/v3/products/1?categoryId=0', body: fixture('products.xml'))
     end
 

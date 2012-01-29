@@ -9,7 +9,6 @@ module Bol
     attr_reader :query, :response, :proxy
 
     DOMAIN             = 'openapi.bol.com'
-    ConfigurationError = Class.new(Exception)
     ParameterError     = Class.new(Exception)
 
     def_delegators :response, :code, :body
@@ -73,8 +72,7 @@ module Bol
     end
 
     def signature
-      raise ConfigurationError unless Bol.configuration[:access_key] and
-        Bol.configuration[:secret]
+      Bol.configuration.validate
       msg =  <<-EOS
 GET
 

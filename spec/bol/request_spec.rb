@@ -14,11 +14,11 @@ describe Bol::Request do
 
   describe 'signing and headers' do
     it 'should raise error when key and secret are not configured' do
-      expect { request.fetch }.should raise_error Bol::Request::ConfigurationError
+      expect { request.fetch }.should raise_error Bol::ConfigurationError
     end
 
     it 'should request application/xml' do
-      Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
+      Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         req['Content-Type'] == 'application/xml'
       end
@@ -26,7 +26,7 @@ describe Bol::Request do
     end
 
     it 'should set special date header' do
-      Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
+      Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         !req['X-OpenAPI-Date'].nil?
       end
@@ -34,7 +34,7 @@ describe Bol::Request do
     end
 
     it 'should add signature to request by default' do
-      Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
+      Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         !req['X-OpenAPI-Authorization'].nil?
       end
@@ -43,7 +43,7 @@ describe Bol::Request do
   end
 
   it 'should trigger event manually' do
-    Bol.stub(:configuration).and_return({ access_key: 'foo', secret: 'bar' })
+    Bol.configure access_key: 'foo', secret: 'bar'
     Net::HTTP.any_instance.should_receive(:request)
     request.fetch
   end
@@ -60,7 +60,7 @@ describe Bol::Request do
     end
 
     it 'should URL encode the terms' do
-      Bol::Requests::Product.new('foo bar', query).uri.to_s.should == 
+      Bol::Requests::Product.new('foo bar', query).uri.to_s.should ==
         'https://openapi.bol.com/openapi/services/rest/catalog/v3/products/foo%20bar?categoryId=1&nrProducts=3'
     end
   end

@@ -1,10 +1,16 @@
 require 'rspec'
 require 'fakeweb'
 require 'bol'
+require 'support'
 
-FakeWeb.allow_net_connect = false
+RSpec.configure do |config|
+  config.before(:suite) do
+    FakeWeb.allow_net_connect = false
+  end
 
-def fixture(name)
-  File.read(File.expand_path(File.join("../fixtures/#{name}"), __FILE__))
+  config.after(:each) do
+    Bol.reset_configuration
+  end
+
+  config.include SpecHelpers
 end
-
