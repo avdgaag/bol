@@ -9,7 +9,7 @@ module Bol
       end
 
       def path
-        "/openapi/services/rest/catalog/v3/productlists/#{@type}/#{@query.params[:categoryId]}"
+        "/openapi/services/rest/catalog/v3/listresults/#{@type}/#{@query.params[:categoryId]}"
       end
     end
   end

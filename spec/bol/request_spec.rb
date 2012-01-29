@@ -69,7 +69,7 @@ describe Bol::Request do
     let(:request) { Bol::Requests::Category.new(query) }
 
     it 'should get from correct URL' do
-      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/categorylists/1'
+      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/listresults/toplist_default/1'
     end
   end
 
@@ -98,7 +98,7 @@ describe Bol::Request do
     let(:request) { Bol::Requests::List.new('foo', query) }
 
     it 'should get from correct URL' do
-      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/productlists/foo/0'
+      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/listresults/foo/0'
     end
 
     it 'should require param type' do
