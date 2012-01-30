@@ -8,8 +8,27 @@ describe Bol::Request do
     expect { Bol::Request.new }.to raise_error ArgumentError
   end
 
-  it 'should convert query to params' do
-    request.params.should == "categoryId=1&nrProducts=3"
+  describe 'query filtering' do
+    it 'should list all params in a hash' do
+      request.params.should == {
+        includeCategories: false,
+        includeProducts: false,
+        includeRefinements: false,
+        categoryId: 1,
+        nrProducts: 3
+      }
+    end
+
+    it 'should not list ignored params' do
+      Bol::Requests::Product.new(1, query).params.should == {
+        categoryId: 1,
+        nrProducts: 3
+      }
+    end
+
+    it 'should convert query to params' do
+      request.query_string.should == "categoryId=1&nrProducts=3&includeCategories=false&includeProducts=false&includeRefinements=false"
+    end
   end
 
   describe 'signing and headers' do
@@ -21,7 +40,7 @@ describe Bol::Request do
       Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         req['Content-Type'] == 'application/xml'
-      end
+      end.and_return(double(code: 200))
       request.fetch
     end
 
@@ -29,7 +48,7 @@ describe Bol::Request do
       Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         !req['X-OpenAPI-Date'].nil?
-      end
+      end.and_return(double(code: 200))
       request.fetch
     end
 
@@ -37,14 +56,14 @@ describe Bol::Request do
       Bol.configure access_key: 'foo', secret: 'bar'
       Net::HTTP.any_instance.should_receive(:request).with do |req|
         !req['X-OpenAPI-Authorization'].nil?
-      end
+      end.and_return(double(code: 200))
       request.fetch
     end
   end
 
   it 'should trigger event manually' do
     Bol.configure access_key: 'foo', secret: 'bar'
-    Net::HTTP.any_instance.should_receive(:request)
+    Net::HTTP.any_instance.should_receive(:request).and_return(double(code: 200))
     request.fetch
   end
 
@@ -62,14 +81,6 @@ describe Bol::Request do
     it 'should URL encode the terms' do
       Bol::Requests::Product.new('foo bar', query).uri.to_s.should ==
         'https://openapi.bol.com/openapi/services/rest/catalog/v3/products/foo%20bar?categoryId=1&nrProducts=3'
-    end
-  end
-
-  describe Bol::Requests::Category do
-    let(:request) { Bol::Requests::Category.new(query) }
-
-    it 'should get from correct URL' do
-      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/listresults/toplist_default/1'
     end
   end
 
@@ -98,7 +109,7 @@ describe Bol::Request do
     let(:request) { Bol::Requests::List.new('foo', query) }
 
     it 'should get from correct URL' do
-      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/listresults/foo/0'
+      request.uri.to_s.should == 'https://openapi.bol.com/openapi/services/rest/catalog/v3/listresults/foo/0?categoryId=0&includeCategories=false&includeProducts=false&includeRefinements=false'
     end
 
     it 'should require param type' do

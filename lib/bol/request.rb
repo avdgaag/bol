@@ -1,15 +1,16 @@
 require 'forwardable'
 require 'net/https'
-require 'base64'
 require 'uri'
 
 module Bol
+  NotFound = Class.new(Exception)
+
   class Request
     extend Forwardable
+
     attr_reader :query, :response, :proxy
 
-    DOMAIN             = 'openapi.bol.com'
-    ParameterError     = Class.new(Exception)
+    DOMAIN = 'openapi.bol.com'
 
     def_delegators :response, :code, :body
 
@@ -28,36 +29,46 @@ module Bol
     def initialize(query)
       @query = query
       @query.request = self
-      @proxy = ResultProxy.new(self)
+    end
+
+    def proxy
+      @proxy ||= Proxy.new(self, Parsers::Products.new(self))
     end
 
     def params
-      @params ||= @query.params.map do |k, v|
-        unless self.class.ignored_param?(k)
-          "#{URI.escape(k.to_s)}=#{URI.escape(v.to_s)}"
-        end
-      end.compact.join('&')
+      @params ||= query.params.reject do |k, v|
+        self.class.ignored_param?(k)
+      end
+    end
+
+    def query_string
+      @query_string ||= params.map { |k, v|
+        "#{URI.escape(k.to_s)}=#{URI.escape(v.to_s)}"
+      }.join('&')
     end
 
     def uri
-      uri = if params.empty?
-        "https://#{DOMAIN}#{path}"
-      else
-        "https://#{DOMAIN}#{path}?#{params}"
+      @uri ||= begin
+        uri = if params.empty?
+          "https://#{DOMAIN}#{path}"
+        else
+          "https://#{DOMAIN}#{path}?#{query_string}"
+        end
+        URI.parse(uri)
       end
-      @uri ||= URI.parse(uri)
     end
 
     def fetch
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
+      http             = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl     = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      request = Net::HTTP::Get.new(uri.request_uri)
-      request.content_type = 'application/xml'
-      request['Connection'] = 'close'
-      request['X-OpenAPI-Authorization'] = signature
-      request['X-OpenAPI-Date'] = date
+      request          = Net::HTTP::Get.new(uri.request_uri)
+      request.content_type               = 'application/xml'
+      request['Connection']              = 'close'
+      request['X-OpenAPI-Authorization'] = Signature.new(date, path, params).generate
+      request['X-OpenAPI-Date']          = date
       @response = http.request(request)
+      raise Bol::NotFound if @response.code =~ /^4\d\d$/
       self
     end
 
@@ -69,29 +80,6 @@ module Bol
 
     def date
       @date ||= Time.now.utc.strftime '%a, %d %B %Y %H:%M:%S GMT'
-    end
-
-    def signature
-      Bol.configuration.validate
-      msg =  <<-EOS
-GET
-
-application/xml
-#{date}
-x-openapi-date:#{date}
-#{path}
-#{signature_params}
-EOS
-
-      Bol.configuration[:access_key] + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha256', Bol.configuration[:secret], msg.chomp)).sub(/\n/, '')
-    end
-
-    def signature_params
-      @query.params.map do |k, v|
-        unless self.class.ignored_param?(k)
-          "&#{k}=#{v}"
-        end
-      end.compact.sort.join("\n")
     end
 
     # overridden in subclasses

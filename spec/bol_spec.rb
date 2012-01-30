@@ -30,4 +30,26 @@ describe Bol do
       Bol.configure(access_key: 'foo') { |c| flunk }
     end
   end
+
+  describe 'shortcut methods' do
+    it 'should delegate search to a new scope object' do
+      Bol::Scope.any_instance.should_receive(:search).with('foo')
+      Bol.search('foo')
+    end
+
+    it 'should delegate categories to a new scope object' do
+      Bol::Scope.any_instance.should_receive(:categories)
+      Bol.categories
+    end
+
+    it 'should delegate find to a new scope object' do
+      Bol::Scope.any_instance.should_receive(:search).with(1)
+      Bol.search(1)
+    end
+
+    it 'should delegate refinements to a new scope object' do
+      Bol::Scope.any_instance.should_receive(:refinements)
+      Bol.refinements
+    end
+  end
 end

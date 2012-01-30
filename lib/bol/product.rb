@@ -3,7 +3,7 @@ require 'cgi'
 module Bol
   class Product
     def self.find(id)
-      Requests::Product.new(id, Query.new(0)).proxy.product
+      Requests::Product.new(id, Query.new(0)).proxy.all.first
     end
 
     attr_reader :attributes

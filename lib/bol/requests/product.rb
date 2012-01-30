@@ -1,6 +1,8 @@
 module Bol
   module Requests
     class Product < Request
+      ignore_params :includeCategories, :includeProducts, :includeRefinements
+
       def initialize(product_id, *args)
         @product_id = product_id
         super *args

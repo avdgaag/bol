@@ -4,24 +4,42 @@ module Bol
     attr_accessor :request
 
     def initialize(category_id)
-      raise ArgumentError unless category_id.is_a?(Fixnum)
+      raise ArgumentError if category_id =~ /[^\d+]/
       @category_id = category_id
+      @inclusions = []
     end
 
     def params
-      p = {
-        categoryId: @category_id,
-      }
-      p[:nrProducts]       = @limit           if @limit
-      p[:offset]           = @offset          if @offset
-      p[:sortingMethod]    = @order_key       if @order_key
-      p[:sortingAscending] = @order_direction if @order_direction
-      p[:term]             = @term            if @term
-      p
+      { categoryId: @category_id }.tap do |p|
+        p[:nrProducts]         = @limit           if @limit
+        p[:offset]             = @offset          if @offset
+        p[:sortingMethod]      = @order_key       if @order_key
+        p[:sortingAscending]   = @order_direction if @order_direction
+        p[:term]               = @term            if @term
+        p[:includeCategories]  = categories?
+        p[:includeProducts]    = products?
+        p[:includeRefinements] = refinements?
+      end
     end
 
     def has_param?(key)
       params.has_key?(key) and !params[key].nil?
+    end
+
+    def categories?
+      @inclusions.include? :categories
+    end
+
+    def products?
+      @inclusions.include? :products
+    end
+
+    def refinements?
+      @inclusions.include? :refinements
+    end
+
+    def include(kind)
+      @inclusions << kind
     end
 
     def search(term = nil)

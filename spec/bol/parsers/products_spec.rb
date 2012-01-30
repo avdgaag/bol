@@ -1,8 +1,16 @@
 require 'spec_helper'
 
-describe Bol::XmlParser do
+describe Bol::Parsers::Products do
+  let(:request) do
+    double('request').tap do |r|
+      r.stub(:fetch).and_return(r)
+      r.stub(:body).and_return(body)
+    end
+  end
+  let(:product) { Bol::Parsers::Products.new(request).objects.first }
+
   describe 'parsing products' do
-    let(:product) { Bol::XmlParser.new(fixture('products.xml')).product }
+    let(:body) { fixture('products.xml') }
 
     it 'should set simple attributes' do
       product.id.should == '1001004006016448'
@@ -36,7 +44,8 @@ describe Bol::XmlParser do
   end
 
   describe 'parsing product search results' do
-    let(:products) { Bol::XmlParser.new(fixture('searchproducts-music.xml')).products }
+    let(:body) { fixture('searchproducts-music.xml') }
+    let(:products) { Bol::Parsers::Products.new(request).objects }
 
     it 'should parse into array of products' do
       products.size.should == 2
@@ -51,7 +60,8 @@ describe Bol::XmlParser do
   end
 
   describe 'parsing product listings' do
-    let(:products) { Bol::XmlParser.new(fixture('productlists.xml')).products }
+    let(:body) { fixture('productlists.xml') }
+    let(:products) { Bol::Parsers::Products.new(request).objects }
 
     it 'should parse into array of products' do
       products.size.should == 2

@@ -13,7 +13,10 @@ describe Bol::Product do
       r.should be_instance_of Bol::Product
     end
 
-    it 'should raise error when not found'
+    it 'should raise error when not found' do
+      FakeWeb.register_uri(:get, %r{https://openapi.bol.com}, status: ['404', 'Not found'])
+      expect { Bol::Product.find(999) }.to raise_error(Bol::NotFound)
+    end
   end
 
   describe 'attributes' do

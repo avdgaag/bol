@@ -1,27 +1,40 @@
 module Bol
   class Scope
-    attr_reader :id
+    attr_reader :ids
 
-    def initialize(id = 0)
-      @id = id
+    def initialize(ids = nil)
+      @ids = Array(ids)
+      @ids = [0] if @ids.empty?
+    end
+
+    def to_s
+      ids.join('+')
     end
 
     def +(other)
-      self.class.new [*id.to_s.split('+'), *other.id.to_s.split('+')].uniq.join('+')
+      self.class.new((ids + other.ids).uniq)
     end
 
     def -(other)
-      self.class.new id.to_s.split('+').reject { |i| i == other.id.to_s }.join('+')
+      self.class.new(ids - other.ids)
     end
 
     def search(terms)
-      q = Query.new(id)
+      q = Query.new(to_s)
       q.search terms
       Requests::Search.new(q).proxy
     end
 
-    def subcategories
-      Requests::Category.new(Query.new(id))
+    def categories
+      q = Query.new(to_s)
+      q.include :categories
+      Requests::List.new('toplist_default', q).proxy
+    end
+
+    def refinements
+      q = Query.new(to_s)
+      q.include :refinements
+      Requests::List.new('toplist_default', q).proxy
     end
 
     {
@@ -33,7 +46,9 @@ module Bol
       preorder_products: 'preorder'
     }.each_pair do |method, type|
       define_method method do
-        Requests::List.new(type, Query.new(id)).proxy
+        q = Query.new(to_s)
+        q.include :products
+        Requests::List.new(type, q).proxy
       end
     end
   end
