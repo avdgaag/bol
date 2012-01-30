@@ -28,19 +28,25 @@ module Bol
     yield @configuration if options.nil?
   end
 
-  def self.search(*args)
-    Scope.new.search(*args)
+  class << self
+    %w{
+      top_products
+      top_products_overall
+      top_products_last_week
+      top_products_last_two_months
+      new_products
+      preorder_products
+      search
+      categories
+      refinements
+    }.each do |name|
+      define_method name do |*args|
+        Scope.new.send(name, *args)
+      end
+    end
   end
 
-  def self.categories
-    Scope.new.categories
-  end
-
-  def self.refinements
-    Scope.new.refinements
-  end
-
-  def self.find(id)
-    Product.find(id)
+  def find(id)
+    Bol::Product.find(id)
   end
 end
