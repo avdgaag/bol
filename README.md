@@ -1,36 +1,117 @@
-**Currently a work in progress**
+# Bol
 
 A Ruby wrapper around the [bol.com developers API][docs], that will be made
-available as a Gem. Currently in alpha stage.
+available as a Gem. *Currently in beta stage.*
 
 [docs]: http://developers.bol.com
+
+## Installation
+
+Bol is a simple Ruby gem, so it requires a working installation of Ruby with
+Ruby gems.  Ruby 1.9 is required. Install the gem:
+
+```
+$ gem install bol
+```
+
+Or, if your project uses [Bundler][] simply add it to your `Gemfile`:
+
+[Bundler]: http://gembundler.com
+
+```ruby
+gem 'bol'
+```
+
+Then, simply `require` it in your code, provide some configuration settings and
+query away.
 
 ## Available operations
 
 Here are the currently working operations:
+
+### Loading a specific product
+
+If you know an ID, you can load a product directly:
 
 ```ruby
 product = Bol::Product.find(params[:id])
 product.title
 product.cover(:medium)
 product.referral_url('my_associate_id')
+```
+
+### Listing products
+
+You can get a list of popular or bestselling products:
+
+* `Bol.top_products`
+* `Bol.top_products_overall`
+* `Bol.top_products_last_week`
+* `Bol.top_products_last_two_months`
+* `Bol.new_products`
+* `Bol.preorder_products`
+
+Or, you can apply a scope to limit results to a category:
+
+```ruby
+Bol::Scope.new(params[:category_id]).top_producs
+```
+
+### Searching products
+
+You can search globally for keywords or ISBN and use a Arel-like syntax
+for setting options:
+
+```ruby
 Bol.search(params[:query]).limit(10).offset(10).order('sales_ranking ASC')
 Bol.search(params[:query]).page(params[:page])
-Bol::Category.new(params[:id]).search(params[:query])
-Bol::Category.new(params[:id]).top_products
-Bol::Category.new(params[:id]).top_products_overall
-Bol::Category.new(params[:id]).top_products_last_week
-Bol::Category.new(params[:id]).top_products_last_two_months
-Bol::Category.new(params[:id]).new_products
-Bol::Category.new(params[:id]).preorder_products
+```
+
+You can scope your search to a specific category:
+
+```ruby
+Bol::Scope.new(params[:category_id]).search(params[:query])
+```
+
+### Loading categories and refinements
+
+Loading all top-level categories (e.g. `DVDs` or `English Book`) is simple
+enough:
+
+```ruby
+categories = Bol.categories
+categories.first.name # => 'Books'
+```
+
+You can load subsequent subcategories:
+
+```ruby
+Bol::Scope.new(categories.first.id).categories
+```
+
+Refinements (e.g. 'under 10 euros') work much the same way as categories, but
+are grouped under a shared name, such as group 'Price' with refinements 'up to
+10 euros', '10 to 20 euros', etc.:
+
+```ruby
+groups = Bol.refinements
+group = groups.first
+group.name # => 'Price'
+group.refinements.first.name # => 'under 10 euros'
+```
+
+### Scoping operations
+
+The `Bol::Scope` object limits results to given categories and/or refinements.
+You can create a scope using explicit IDs, and you can do basic combinations:
+
+```ruby
+books = Bol::Scope.new(some_category_id)
+cheap = Bol::Scope.new(some_refinement_id)
+(books + cheap).top_products
 ```
 
 Here's an overview of all the operations that should still be implemented:
-
-```ruby
-Bol::Category.new(params[:id]).subcategories
-(Bol::Category.new(1) + Bol::Category.new(2)).top_products
-```
 
 ## Background
 
@@ -45,18 +126,20 @@ a add a little sugar to make working with Ruby objects a little easier:
 
 ## Wishlist
 
+* Allow scoping by category or refinement objects instead of just IDs
 * Add a simple identiy map, so the same product does not have to be loaded
   twice when requested twice
 * Properly differentiate between product types. Currently built around books;
   DVDs, music and toys may or may not work as expected.
-* Properly support categories, multiple categories, and category refinements
-  (like "under 5 euro").
 * Add default ordering of products
 
 I do not need this stuff myself, but I will gladly take pull requests for such
 features.
 
 ## Configuration
+
+To be allowed to make requests to the Bol.com API you need to register on their
+site and request a access key and secret. Configure the Bol gem as follows:
 
 ```ruby
 Bol.configure do |c|
