@@ -5,7 +5,9 @@ available as a Gem. *Currently in beta stage.*
 
 [docs]: http://developers.bol.com
 
-## Installation
+## Getting started
+
+### Installation
 
 Bol is a simple Ruby gem, so it requires a working installation of Ruby with
 Ruby gems.  Ruby 1.9 is required. Install the gem:
@@ -24,6 +26,19 @@ gem 'bol'
 
 Then, simply `require` it in your code, provide some configuration settings and
 query away.
+
+### Configuration
+
+To be allowed to make requests to the Bol.com API you need to register on their
+site and request a access key and secret. Configure the Bol gem as follows:
+
+```ruby
+Bol.configure do |c|
+  c.key = 'your public access key'
+  c.secret = 'your private secret'
+  c.per_page = 10
+end
+```
 
 ## Available operations
 
@@ -135,19 +150,6 @@ a add a little sugar to make working with Ruby objects a little easier:
 
 I do not need this stuff myself, but I will gladly take pull requests for such
 features.
-
-## Configuration
-
-To be allowed to make requests to the Bol.com API you need to register on their
-site and request a access key and secret. Configure the Bol gem as follows:
-
-```ruby
-Bol.configure do |c|
-  c.key = 'your public access key'
-  c.secret = 'your private secret'
-  c.per_page = 10
-end
-```
 
 ## Note on Patches/Pull Requests
 
