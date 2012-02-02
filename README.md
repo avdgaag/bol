@@ -42,7 +42,7 @@ end
 
 ### Example application
 
-See an example Sinatra application implementing basic search-and-display functionality: [https://gist.github.com/1724664][]
+See an example Sinatra application implementing basic search-and-display functionality: [https://gist.github.com/1724664](https://gist.github.com/1724664)
 
 ## Available operations
 
