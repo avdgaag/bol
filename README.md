@@ -42,7 +42,10 @@ end
 
 ### Example application
 
-See an example Sinatra application implementing basic search-and-display functionality: [https://gist.github.com/1724664](https://gist.github.com/1724664)
+See an example Sinatra application implementing basic search-and-display 
+functionality: [https://gist.github.com/1724664](https://gist.github.com/1724664).
+There's [an introductory blog post](http://arjanvandergaag.nl/blog/bol-gem.html)
+to go with it.
 
 ## Available operations
 
