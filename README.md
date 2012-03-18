@@ -1,5 +1,7 @@
 # Bol
 
+[![Build Status](https://secure.travis-ci.org/avdgaag/bol.png?branch=master)](http://travis-ci.org/avdgaag/bol)
+
 A Ruby wrapper around the [bol.com developers API][docs], that will be made
 available as a Gem. *Currently in beta stage.*
 
