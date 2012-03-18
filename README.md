@@ -12,7 +12,7 @@ available as a Gem. *Currently in beta stage.*
 ### Installation
 
 Bol is a simple Ruby gem, so it requires a working installation of Ruby with
-Ruby gems.  Ruby 1.9 is required. Install the gem:
+Ruby gems. Note: **Ruby 1.9 is required**. Install the gem:
 
 ```
 $ gem install bol
