@@ -769,6 +769,7 @@ dt {
 #header nav li.fork {
   float: left;
   margin-left: 0px;
+  margin-right: 10px;
 }
 #header nav li.downloads {
   float: right;
@@ -812,6 +813,10 @@ section #title .credits {
   font-weight: normal;
   color: #696969;
   margin-top: -10px;
+}
+section #title span img {
+  vertical-align: middle;
+  margin-left: 10px;
 }
 section #title .credits.left {
   float: left;
