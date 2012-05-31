@@ -1,0 +1,8 @@
+--no-private
+--title "Bol, a Ruby wrapper around the bol.com API"
+--readme README.md
+--markup markdown
+--markup-provider kramdown
+-
+CHANGELOG.md
+LICENSE.md
