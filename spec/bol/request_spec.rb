@@ -33,7 +33,7 @@ describe Bol::Request do
 
   describe 'signing and headers' do
     it 'should raise error when key and secret are not configured' do
-      expect { request.fetch }.should raise_error Bol::ConfigurationError
+      expect { request.fetch }.to raise_error Bol::ConfigurationError
     end
 
     it 'should request application/xml' do

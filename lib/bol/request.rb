@@ -13,7 +13,7 @@ module Bol
 
     DOMAIN = 'openapi.bol.com'
 
-    def_delegators :response, :code, :body
+    def_delegators :@response, :code, :body
 
     def self.ignore_params(*args)
       @params_to_ignore ||= []
