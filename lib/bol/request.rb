@@ -4,6 +4,7 @@ require 'uri'
 
 module Bol
   NotFound    = Class.new(StandardError)
+  Unavailable = Class.new(StandardError)
 
   class Request
     extend Forwardable
@@ -68,6 +69,7 @@ module Bol
       request['X-OpenAPI-Authorization'] = Signature.new(date, path, params).generate
       request['X-OpenAPI-Date']          = date
       @response = http.request(request)
+      raise Bol::Unavailable if @response.code =~ /^5\d\d$/
       raise Bol::NotFound if @response.code =~ /^4\d\d$/
       self
     end
