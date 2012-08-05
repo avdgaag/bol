@@ -3,7 +3,7 @@ require 'net/https'
 require 'uri'
 
 module Bol
-  NotFound = Class.new(Exception)
+  NotFound    = Class.new(StandardError)
 
   class Request
     extend Forwardable
