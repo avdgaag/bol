@@ -7,14 +7,14 @@ module Bol
 
       def parse_object(el)
         RefinementGroup.new.tap do |category|
-          category.name  = el.elements['Name'].text.strip
-          category.id    = el.elements['Id'].text.strip
+          category.name  = el.at('Name').content.strip
+          category.id    = el.at('Id').content.strip
           category.refinements = []
-          el.elements.each('Refinement') do |e|
+          el.('xmlns:Refinement').each do |e|
             category.refinements << Refinement.new.tap { |r|
-              r.name  = e.elements['Name'].text.strip
-              r.id    = e.elements['Id'].text.strip
-              r.count = e.elements['ProductCount'].text.strip
+              r.name  = e.at('Name').content.strip
+              r.id    = e.at('Id').content.strip
+              r.count = e.at('ProductCount').content.strip
             }
           end
         end

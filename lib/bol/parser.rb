@@ -1,4 +1,4 @@
-require 'rexml/document'
+require 'nokogiri'
 require 'ostruct'
 
 module Bol
@@ -11,7 +11,7 @@ module Bol
 
     def objects
       [].tap do |collection|
-        xml.elements.each(xpath) do |el|
+        xml.xpath(xpath).each do |el|
           collection << parse_object(el)
         end
       end
@@ -28,7 +28,8 @@ module Bol
     end
 
     def xml
-      @xml ||= REXML::Document.new(request.fetch.body)
+      body = request.fetch.body
+      @xml ||= Nokogiri::XML(body)
     end
   end
 end
