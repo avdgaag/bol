@@ -1,232 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<CategoryListResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
-  <SessionId>2957E300-B2AC-4749-99C5-12831D6286A2</SessionId>
+<ListResultResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+  <SessionId>3C45A0CA-CF29-4D0B-B4EB-1FE40D48A58D</SessionId>
+  <OriginalRequest>
+    <Category>
+      <Id>0</Id>
+      <Name>Alle artikelen</Name>
+    </Category>
+  </OriginalRequest>
+  <TotalResultSize>6378375</TotalResultSize>
   <Category>
-    <Id>1</Id>
-    <Name>categorieen</Name>
-    <CategoryRefinement>
-      <Id>1430</Id>
-      <Name>Nederlandse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>3131</Id>
-      <Name>Buitenlandse boeken</Name>
-    </CategoryRefinement>
+    <Id>8299</Id>
+    <Name>Boeken</Name>
+    <ProductCount>5129135</ProductCount>
   </Category>
   <Category>
-    <Id>1312</Id>
-    <Name>taal</Name>
-    <CategoryRefinement>
-      <Id>8293</Id>
-      <Name>Nederlandse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>8292</Id>
-      <Name>Engelse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>8296</Id>
-      <Name>Duitse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>8294</Id>
-      <Name>Franse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>8298</Id>
-      <Name>Spaanse boeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>8297</Id>
-      <Name>Turkse boeken</Name>
-    </CategoryRefinement>
+    <Id>3132</Id>
+    <Name>Muziek</Name>
+    <ProductCount>578012</ProductCount>
   </Category>
   <Category>
-    <Id>4852</Id>
-    <Name>prijs</Name>
-    <CategoryRefinement>
-      <Id>7143</Id>
-      <Name>Tot € 10</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4854</Id>
-      <Name>Tot € 20</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4855</Id>
-      <Name>Tot € 30</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4856</Id>
-      <Name>Tot € 40</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4857</Id>
-      <Name>Tot € 50</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4858</Id>
-      <Name>Tot € 100</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>5014</Id>
-      <Name>Tot € 200</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4860</Id>
-      <Name>Tot € 300</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4861</Id>
-      <Name>Tot € 400</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4862</Id>
-      <Name>Tot € 500</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4863</Id>
-      <Name>Tot € 750</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4864</Id>
-      <Name>Tot € 1000</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4865</Id>
-      <Name>Tot € 1500</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4866</Id>
-      <Name>Tot € 2000</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>7346</Id>
-      <Name>Tot € 2500</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4867</Id>
-      <Name>€ 2500 en meer</Name>
-    </CategoryRefinement>
+    <Id>3133</Id>
+    <Name>Dvd</Name>
+    <ProductCount>82007</ProductCount>
   </Category>
   <Category>
-    <Id>1317</Id>
-    <Name>onderwerp</Name>
-    <CategoryRefinement>
-      <Id>4294965600</Id>
-      <Name>2012</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965780</Id>
-      <Name>De beste luisterboeken voor in de file</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966229</Id>
-      <Name>De leukste luisterboeken voor op vakantie</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966964</Id>
-      <Name>Economie &amp; Management</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966963</Id>
-      <Name>Gedrag &amp; Maatschappij</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966967</Id>
-      <Name>Gezondheidszorg</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965025</Id>
-      <Name>Girl's only</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965588</Id>
-      <Name>Happinez</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294964522</Id>
-      <Name>Jaarkalenders</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294964509</Id>
-      <Name>Je eigen lichaam</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965319</Id>
-      <Name>Kalenders</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966309</Id>
-      <Name>Koopjeskelder uitverkoop</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965337</Id>
-      <Name>Luchtfotoboeken</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965561</Id>
-      <Name>Luisterboekenvoordeel!</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966965</Id>
-      <Name>Overige uittreksels</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966948</Id>
-      <Name>Rechten</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965978</Id>
-      <Name>Roman</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966940</Id>
-      <Name>Scandinavische thrillers</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966380</Id>
-      <Name>Scheurkalenders</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294964608</Id>
-      <Name>Seizoenen</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965664</Id>
-      <Name>Spanning</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965612</Id>
-      <Name>Techniek &amp; Informatica</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294964491</Id>
-      <Name>Vanaf 24 maanden</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294965320</Id>
-      <Name>Verjaardagskalenders</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>4294966079</Id>
-      <Name>Voordelige bestsellers</Name>
-    </CategoryRefinement>
+    <Id>3135</Id>
+    <Name>Games</Name>
+    <ProductCount>11668</ProductCount>
   </Category>
   <Category>
-    <Id>7287</Id>
-    <Name>aanraders</Name>
-    <CategoryRefinement>
-      <Id>7288</Id>
-      <Name>Te reserveren</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>7290</Id>
-      <Name>Bestbeoordeeld</Name>
-    </CategoryRefinement>
-    <CategoryRefinement>
-      <Id>7289</Id>
-      <Name>Nieuw verschenen</Name>
-    </CategoryRefinement>
+    <Id>7934</Id>
+    <Name>Speelgoed</Name>
+    <ProductCount>16209</ProductCount>
   </Category>
-</CategoryListResponse>
+  <Category>
+    <Id>11271</Id>
+    <Name>Baby</Name>
+    <ProductCount>6662</ProductCount>
+  </Category>
+  <Category>
+    <Id>11764</Id>
+    <Name>Koken, Tafelen en Huishouden</Name>
+    <ProductCount>14519</ProductCount>
+  </Category>
+  <Category>
+    <Id>3136</Id>
+    <Name>Elektronica</Name>
+    <ProductCount>17328</ProductCount>
+  </Category>
+  <Category>
+    <Id>3134</Id>
+    <Name>Computer</Name>
+    <ProductCount>7660</ProductCount>
+  </Category>
+</ListResultResponse>

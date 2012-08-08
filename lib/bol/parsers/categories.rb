@@ -2,7 +2,7 @@ module Bol
   module Parsers
     class Categories < Parser
       def xpath
-        '*/Category'
+        '*/xmlns:Category'
       end
 
       def parse_object(el)
