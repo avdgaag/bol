@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ListResultResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+  <SessionId>C8A8ABA4-85A1-4E9C-89B5-307D655172E9</SessionId>
+  <OriginalRequest>
+    <Category>
+      <Id>0</Id>
+      <Name>Alle artikelen</Name>
+    </Category>
+  </OriginalRequest>
+  <TotalResultSize>6443964</TotalResultSize>
+  <RefinementGroup>
+    <Id>1</Id>
+    <Name>categorieen</Name>
+    <Refinement>
+      <Id>8299</Id>
+      <Name>Boeken</Name>
+      <ProductCount>5173467</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>3132</Id>
+      <Name>Muziek</Name>
+      <ProductCount>585679</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>3133</Id>
+      <Name>Dvd</Name>
+      <ProductCount>82493</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>3135</Id>
+      <Name>Games</Name>
+      <ProductCount>11773</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7934</Id>
+      <Name>Speelgoed</Name>
+      <ProductCount>16640</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>11271</Id>
+      <Name>Baby</Name>
+      <ProductCount>7394</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>11764</Id>
+      <Name>Koken, Tafelen en Huishouden</Name>
+      <ProductCount>15120</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>3136</Id>
+      <Name>Elektronica</Name>
+      <ProductCount>23775</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>3134</Id>
+      <Name>Computer</Name>
+      <ProductCount>8314</ProductCount>
+    </Refinement>
+  </RefinementGroup>
+  <RefinementGroup>
+    <Id>4852</Id>
+    <Name>prijs</Name>
+    <Refinement>
+      <Id>7143</Id>
+      <Name>Tot € 10</Name>
+      <ProductCount>987915</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4854</Id>
+      <Name>Tot € 20</Name>
+      <ProductCount>2992681</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4855</Id>
+      <Name>Tot € 30</Name>
+      <ProductCount>4755751</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4856</Id>
+      <Name>Tot € 40</Name>
+      <ProductCount>5438080</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4857</Id>
+      <Name>Tot € 50</Name>
+      <ProductCount>5711940</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4858</Id>
+      <Name>Tot € 100</Name>
+      <ProductCount>6157502</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>5014</Id>
+      <Name>Tot € 200</Name>
+      <ProductCount>6354200</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4860</Id>
+      <Name>Tot € 300</Name>
+      <ProductCount>6392817</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4861</Id>
+      <Name>Tot € 400</Name>
+      <ProductCount>6406546</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4862</Id>
+      <Name>Tot € 500</Name>
+      <ProductCount>6411156</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4863</Id>
+      <Name>Tot € 750</Name>
+      <ProductCount>6438900</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4864</Id>
+      <Name>Tot € 1000</Name>
+      <ProductCount>6440976</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4865</Id>
+      <Name>Tot € 1500</Name>
+      <ProductCount>6442621</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4866</Id>
+      <Name>Tot € 2000</Name>
+      <ProductCount>6443241</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7346</Id>
+      <Name>Tot € 2500</Name>
+      <ProductCount>6443490</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>4867</Id>
+      <Name>€ 2500 en meer</Name>
+      <ProductCount>522</ProductCount>
+    </Refinement>
+  </RefinementGroup>
+  <RefinementGroup>
+    <Id>1424</Id>
+    <Name>verzameledities</Name>
+    <Refinement>
+      <Id>7260</Id>
+      <Name>Eerste druk</Name>
+      <ProductCount>71870</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7262</Id>
+      <Name>Speciale uitgave</Name>
+      <ProductCount>23660</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7261</Id>
+      <Name>Gesigneerd</Name>
+      <ProductCount>3182</ProductCount>
+    </Refinement>
+  </RefinementGroup>
+  <RefinementGroup>
+    <Id>7287</Id>
+    <Name>aanraders</Name>
+    <Refinement>
+      <Id>7288</Id>
+      <Name>Te reserveren</Name>
+      <ProductCount>7078</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7290</Id>
+      <Name>Bestbeoordeeld</Name>
+      <ProductCount>63834</ProductCount>
+    </Refinement>
+    <Refinement>
+      <Id>7289</Id>
+      <Name>Nieuw verschenen</Name>
+      <ProductCount>125387</ProductCount>
+    </Refinement>
+  </RefinementGroup>
+</ListResultResponse>
