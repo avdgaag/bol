@@ -33,6 +33,14 @@ describe Bol::Parsers::Products do
       product.release_date.day.should == 1
     end
 
+    it 'should parse offers' do
+      product.offers.first.state.should == 'new'
+      product.offers.first.price.should == '70.99'
+      product.offers.first.list_price.should == '78.99'
+      product.offers.first.availability_code.should == '167'
+      product.offers.first.availability_description.should == '5-10 werkdagen'
+    end
+
     it 'should parse cover' do
       product.cover.should == 'http://s-bol.com/imgbase0/imagebase/thumb/FC/8/4/4/6/1001004006016448.jpg'
       product.cover(:medium).should == 'http://s-bol.com/imgbase0/imagebase/thumb/FC/8/4/4/6/1001004006016448.jpg'

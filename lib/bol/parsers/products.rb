@@ -15,6 +15,17 @@ module Bol
               product.attributes[field.to_sym] = el.at(_field).content.gsub(/\n\s+/, ' ').strip
             end
           end
+          product[:offers] = []
+          el.at('Offers').elements.each do |offer|
+            o = %w[id first_edition special_edition state price list_price availability_code availability_description comment second_hand seller].inject({}) do |output, field|
+              _field = camelize(field)
+              if offer.at(_field)
+                output[field] = offer.at(_field).content.gsub(/\n\s+/, ' ').strip
+              end
+              output
+            end
+            product[:offers] << OpenStruct.new(o)
+          end
           product[:url] = el.at('Urls').at('Main').content.strip
           if el.at('ReleaseDate')
             product[:release_date] = Time.parse(el.at('ReleaseDate').content)
