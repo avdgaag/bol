@@ -67,5 +67,22 @@ describe Bol::Product do
         expect { product.cover(:baz) }.to raise_error KeyError
       end
     end
+    
+    describe '#cover?' do
+      let(:product) { Bol::Product.new }
+      
+      it "should return true if there are covers available for a product" do
+        product.attributes[:cover] = {
+          medium: 'foo',
+          small: 'bar'
+        }
+        product.cover?.should == true
+      end
+      
+      it "should return false if there are no covers available for a product" do
+        product.attributes[:cover] = {}
+        product.cover?.should == false
+      end
+    end
   end
 end
