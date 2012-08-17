@@ -25,6 +25,10 @@ module Bol
     def cover(kind = :medium)
       kind == :best ? highest_quality_cover : attributes[:cover].fetch(kind)
     end
+    
+    def cover?
+      !attributes[:cover].empty?
+    end
 
     def referral_url(site_id)
       format = "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=%s&url=%s&f=API&subid=%s&name=%s"
