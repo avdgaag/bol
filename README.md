@@ -36,7 +36,7 @@ site and request a access key and secret. Configure the Bol gem as follows:
 
 ```ruby
 Bol.configure do |c|
-  c.key = 'your public access key'
+  c.access_key = 'your public access key'
   c.secret = 'your private secret'
   c.per_page = 10
 end
