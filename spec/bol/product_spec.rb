@@ -66,6 +66,23 @@ describe Bol::Product do
       it 'should raise on invalid format' do
         expect { product.cover(:baz) }.to raise_error KeyError
       end
+
+      describe ':best' do
+        it 'should return the best available' do
+          product.attributes[:cover] = {
+            large: 'foo',
+            medium: 'bar',
+            small: 'baz'
+          }
+
+          product.cover(:best).should == 'foo'
+        end
+
+        it 'should return nil of no cover found' do
+          product.attributes[:cover] = { }
+          product.cover(:best).should be_nil
+        end
+      end
     end
   end
 end
