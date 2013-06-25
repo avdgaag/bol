@@ -51,6 +51,14 @@ describe Bol::Parsers::Products do
     end
   end
 
+  describe 'products without offers' do
+    let(:body) { fixture('product-without-offers.xml') }
+
+    it 'parses the product correctly' do
+      product.offers.should eq []
+    end
+  end
+
   describe 'parsing product search results' do
     let(:body) { fixture('searchproducts-music.xml') }
     let(:products) { Bol::Parsers::Products.new(request).objects }
