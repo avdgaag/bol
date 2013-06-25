@@ -15,6 +15,10 @@ module Bol
   autoload :RefinementGroup,  'bol/refinement_group'
   autoload :Signature,        'bol/signature'
 
+  class ApiError < StandardError; end
+  class NotFound < ApiError; end
+  class Unavailable < ApiError; end
+
   def self.configuration
     @configuration ||= Configuration.new
   end
