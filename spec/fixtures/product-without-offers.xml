@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductResponse xmlns="http://openapi.bol.com/openapi-3.0.0">
+  <SessionId>F759BF74-918B-41D3-9B45-9D7E51A13C7C</SessionId>
+  <Product>
+    <Id>1001004006016448</Id>
+    <Title>Harry Potter Boxed Set (Adult Edition)</Title>
+    <Subtitle>Volume 1 - 7, paperback</Subtitle>
+    <Type>book</Type>
+    <Publisher>Bloomsbury Publishing PLC</Publisher>
+    <ShortDescription>This is a fabulous opportunity to finally own
+    all seven Harry Potter titles - Harry Potter and the
+    Philosopher's Stone , Harry Potter and the Chamber of Secrets ,
+    Harry Potter and the Prisoner of Azkaban , Harry Potter and the
+    Goblet of Fire , Harry Potter and the Order of the Phoenix ,
+    Harry Potter and the Half-Blood Prince and Harry Potter and the
+    Deathly Hallows - in a fantastic boxed set.</ShortDescription>
+    <LongDescription>This is a fabulous opportunity to finally own
+    all seven Harry Potter titles - Harry Potter and the
+    Philosopher's Stone , Harry Potter and the Chamber of Secrets ,
+    Harry Potter and the Prisoner of Azkaban , Harry Potter and the
+    Goblet of Fire , Harry Potter and the Order of the Phoenix ,
+    Harry Potter and the Half-Blood Prince and Harry Potter and the
+    Deathly Hallows - in a fantastic boxed set.</LongDescription>
+    <ReleaseDate>2008-10-01+02:00</ReleaseDate>
+    <Ean>9780747595847</Ean>
+    <Rating>5</Rating>
+    <BindingCode>1101</BindingCode>
+    <BindingDescription>Paperback</BindingDescription>
+    <LanguageCode>en</LanguageCode>
+    <LanguageDescription>Engels</LanguageDescription>
+    <Urls>
+      <Main>
+      http://www.bol.com/nl/p/engelse-boeken/harry-potter-boxed-set/1001004006016448/index.html</Main>
+    </Urls>
+    <Authors>
+      <Author>
+        <Id>231315</Id>
+        <Name>J. K. Rowling</Name>
+      </Author>
+      <Author>
+        <Id>540846</Id>
+        <Name>J.K. Rowling</Name>
+      </Author>
+    </Authors>
+    <Images>
+      <ExtraSmall>
+      http://s-bol.com/imgbase0/imagebase/mini/FC/8/4/4/6/1001004006016448.jpg</ExtraSmall>
+      <Small>
+      http://s-bol.com/imgbase0/imagebase/tout/FC/8/4/4/6/1001004006016448.jpg</Small>
+      <Medium>
+      http://s-bol.com/imgbase0/imagebase/thumb/FC/8/4/4/6/1001004006016448.jpg</Medium>
+      <Large>
+      http://s-bol.com/imgbase0/imagebase/regular/FC/8/4/4/6/1001004006016448.jpg</Large>
+      <ExtraLarge>
+      http://s-bol.com/imgbase0/imagebase/large/FC/8/4/4/6/1001004006016448.jpg</ExtraLarge>
+    </Images>
+  </Product>
+</ProductResponse>
