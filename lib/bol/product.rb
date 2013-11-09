@@ -2,6 +2,8 @@ require 'cgi'
 
 module Bol
   class Product
+    POSSBILE_COVER_SIZES = [:extra_large, :large, :medium, :small, :extra_small]
+
     def self.find(id)
       Requests::Product.new(id, Query.new(0)).proxy.all.first
     end
@@ -21,7 +23,7 @@ module Bol
     end
 
     def cover(kind = :medium)
-      attributes[:cover].fetch(kind)
+      kind == :best ? highest_quality_cover : attributes[:cover].fetch(kind)
     end
 
     def referral_url(site_id)
@@ -45,7 +47,14 @@ module Bol
 
     def respond_to?(name)
       super or attributes.keys.include?(name) or
-        attributes.keys.include?(name.to_s.sub(/=$/, '').to_sym)
+      attributes.keys.include?(name.to_s.sub(/=$/, '').to_sym)
+    end
+
+    private
+
+    def highest_quality_cover
+      largest = POSSBILE_COVER_SIZES.find { |size| attributes[:cover][size] }
+      attributes[:cover][largest]
     end
   end
 end
