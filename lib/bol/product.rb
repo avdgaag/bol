@@ -29,6 +29,10 @@ module Bol
     def cover?(kind = :medium)
       attributes[:cover].key?(kind)
     end
+    
+    def cover?
+      !attributes[:cover].empty?
+    end
 
     def referral_url(site_id)
       format = "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=%s&url=%s&f=API&subid=%s&name=%s"
