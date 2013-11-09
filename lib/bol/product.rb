@@ -25,9 +25,9 @@ module Bol
     def cover(kind = :medium)
       kind == :best ? highest_quality_cover : attributes[:cover].fetch(kind)
     end
-    
-    def cover?
-      !attributes[:cover].empty?
+
+    def cover?(kind = :medium)
+      attributes[:cover].key?(kind)
     end
 
     def referral_url(site_id)
