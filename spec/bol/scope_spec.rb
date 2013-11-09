@@ -31,7 +31,7 @@ describe Bol::Scope do
     end
 
     it 'should set query term' do
-      Bol::Requests::Search.should_receive(:new).with(instance_of(Bol::Query)).and_return(stub(proxy: nil, query: nil))
+      Bol::Requests::Search.should_receive(:new).with(instance_of(Bol::Query)).and_return(double(proxy: nil, query: nil))
       Bol::Scope.new.search 'foo'
     end
   end

@@ -8,7 +8,7 @@ describe Bol::Configuration do
     end
 
     it 'should raise for unknown keys' do
-      expect { Bol::Configuration.new foo: 'bar' }.to raise_error ArgumentError
+      expect { Bol::Configuration.new foo: 'bar' }.to raise_error
     end
 
     it 'should set a single key' do
@@ -21,12 +21,12 @@ describe Bol::Configuration do
   describe 'validation' do
     it 'should raise error when not properly configured' do
       c = Bol::Configuration.new
-      expect { c.validate }.to raise_error(Bol::ConfigurationError)
+      expect { c.validate }.to raise_error
     end
 
     it 'should not raise error when all keys are configured' do
       c = Bol::Configuration.new access_key: 'foo', secret: 'bar'
-      expect { c.validate }.to_not raise_error(Bol::ConfigurationError)
+      expect { c.validate }.to_not raise_error
     end
   end
 
