@@ -19,6 +19,7 @@ module Bol
         p[:includeCategories]  = categories?
         p[:includeProducts]    = products?
         p[:includeRefinements] = refinements?
+        p[:includeAttributes]  = 'true'
       end
     end
 
